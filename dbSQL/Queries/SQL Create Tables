@@ -1,0 +1,49 @@
+create table "Users"
+(
+    id    serial
+        constraint "Users_pkey"
+            primary key,
+    name  varchar(255) not null,
+    email varchar(255) not null
+        constraint "Users_email_key"
+            unique
+);
+
+alter table "Users"
+    owner to postgres;
+
+create table "Articles"
+(
+    id        serial
+        constraint "Articles_pkey"
+            primary key,
+    title     varchar(255) not null,
+    text      varchar(255),
+    author_id integer
+        constraint "Articles_author_id_fkey"
+            references "Users"
+);
+
+alter table "Articles"
+    owner to postgres;
+
+create table "Comments"
+(
+    id         serial
+        constraint "Comments_pkey"
+            primary key,
+    article_id integer      not null
+        constraint "Comments_article_id_fkey"
+            references "Articles",
+    author_id  integer      not null
+        constraint "Comments_author_id_fkey"
+            references "Users",
+    comment    varchar(255) not null
+);
+
+alter table "Comments"
+    owner to postgres;
+
+
+
+

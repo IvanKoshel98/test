@@ -1,0 +1,21 @@
+{
+  "name": "test-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
+  },
+  "dependencies": {
+    "create-gitignore": "^0.1.0",
+    "dotenv": "^14.2.0",
+    "pg": "^8.7.1",
+    "sequelize": "^6.13.0"
+  }
+}
